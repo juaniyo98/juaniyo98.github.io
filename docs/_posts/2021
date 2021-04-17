@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Blog 7: Snort"
+date:   2021-04-16 01:51:40 -0700
+categories: Blog Class
+---
+
+`Snort` is most well known as an Intrusion Detection System (IDS). From the snort.org website:
+
+SNORT® is an open source network intrusion detection system capable of performing real-time traffic analysis and packet logging on IP networks. Snort is comprised of two major components: a detection engine that utilizes modular plug-in architecture (the “Snort Engine”) and a flexible rule language to describe traffic to be collected (the “Snort Rules”).
+
+Snort can essentially run in three different modes. IDS Mode, Logging Mode, and Sniffer Mode. 
+
+Default Snort installation comes with lots of rules, which are able to detect all kinds of suspicious and irregular network activity.
+
+
+      `snort -A console -c /etc/snort/snort.conf -i h1-eth0`
+      
+Let's take a look at the options. -A is for "alerts", we are telling Snort to display them on the console. The -c option points to the configuration file, where the protected ("home") network, paths to the rule files, and lots and lots of other settings are specified. Finally, -i specifies the network interface.
+
+Snort reserves a special file for custom rules, that is left blank by default. Open it with the Nano text editor as follows:
+
+
+          sudo nano /etc/snort/rules/local.rules
+
+
+         
